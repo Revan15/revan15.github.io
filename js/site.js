@@ -13,11 +13,11 @@ function formatUSD(amount) {
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('amortizationData', () => ({
-        loanAmount: 230400,
+        loanAmount: 200000,
         formatedLoanAmount: 0,
         loanMonths: 360,
-        interestRate: 6.875,
-        loanStartDate: "2022-11-18",
+        interestRate: 7,
+        loanStartDate: "2023-01-01",
         totalMonthlyPayment: 0,
         monthlyInterestRate: 0,
         periodList: [],
