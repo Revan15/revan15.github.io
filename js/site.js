@@ -17,7 +17,7 @@ document.addEventListener('alpine:init', () => {
         formatedLoanAmount: 0,
         loanMonths: 360,
         interestRate: 7,
-        loanStartDate: "2023-01-01",
+        loanStartDate: "2023-01-15",
         totalMonthlyPayment: 0,
         monthlyInterestRate: 0,
         periodList: [],
