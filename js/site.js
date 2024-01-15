@@ -12,6 +12,17 @@ function formatUSD(amount) {
 }
 
 document.addEventListener('alpine:init', () => {
+
+    // $('#amortizationTableBasic').DataTable({
+    //     // columnDefs: [
+    //     //     {orderable: false, targets: 0}
+    //     // ],
+    //     order: [[1, 'asc']],
+    //     paging: true,
+    //     ordering: false,
+    //     autoWidth: false
+    // });
+
     Alpine.data('amortizationData', () => ({
         loanAmount: 200000,
         formatedLoanAmount: 0,
@@ -289,6 +300,19 @@ document.addEventListener('alpine:init', () => {
             this.createPrincipalVsInterestExtraPaymentPieChart();
 
             this.showAmortizationInfo = true;
+
+            // amortizationTableBasic = new DataTable('#amortizationTableBasic', {
+            //     info: false,
+            //     ordering: false,
+            //     paging: false,
+            //     order: [[1, 'asc']]
+            // });
+            // amortizationTableExtraPayment = new DataTable('#amortizationTableExtraPayment', {
+            //     info: false,
+            //     ordering: false,
+            //     paging: false,
+            //     order: [[1, 'asc']]
+            // });
         },
         resetExtraPaymentModal() {
             this.extraPaymentAmount = 0;
@@ -403,14 +427,11 @@ document.addEventListener('alpine:init', () => {
         calculatePotentialFutureInvestments() {
             var balance = 0;
 
-            console.log(this.amortizationTableExtraPayments.length);
-            
             var i = 0;
             while(i < this.amortizationTableExtraPayments.length) {
 
                 balance = this.calculateFutureValue(balance, this.amortizationTableExtraPayments[i].ExtraPayment);
-                console.log(balance);
-
+                
                 i += 1;
             }
 
